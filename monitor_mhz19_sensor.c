@@ -98,8 +98,9 @@ int main(int argc, char* argv[])
     printf("Unable to open device!\n\n");
     printf("Please check following:\n"
            "- is wiring right with rx & tx crossed? rx->tx tx->rx\n"
-           "- does the device exist under /dev/\n"
-           "- is the serial port activated in /boot/config.txt by enable_uart=1 (not sure about the setting)\n"
+           "- does the device exist under /dev/ttyAMA0\n"
+           "- is the serial port activated in /boot/config.txt by enable_uart=1 and dtoverlay=pi3-miniuart-bt\n"
+           "- is the serial console disabled in /boot/cmdline.txt (removed console=ttyAMA0,115200)\n"
            "- is the console on the serial port in /etc/inittab disabled\n");
     return 1 ;
   }
